@@ -22,4 +22,11 @@ jobs:
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+          TGTG_USER_ID: ${{ secrets.TGTG_USER_ID }}
+          COOKIE: ${{ secrets.COOKIE }}
+          TG_BOT_ID: ${{ secrets.TG_BOT_ID }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: python main.py
