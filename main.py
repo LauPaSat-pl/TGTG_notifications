@@ -23,10 +23,10 @@ async def main() -> None:
 	                                     refresh_token=refresh_token,
 	                                     user_id=tgtg_user_id,
 	                                     cookie=cookie)
-	time.sleep(2)
+	time.sleep(60)
 	bot: Bot = Bot(telegram_bot_id)
 	for item in tgtg_client.get_items():
-		time.sleep(2)
+		time.sleep(60)
 		items_available: int = item['items_available']
 		if items_available > 0:
 			await bot.send_message(chat_id=telegram_chat_id,
