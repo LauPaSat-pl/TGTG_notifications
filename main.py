@@ -3,6 +3,7 @@ App to check available favourite packages from Too Good To Go, and send Telegram
 """
 import asyncio
 import os
+import time
 
 from telegram import Bot
 from tgtg import TgtgClient
@@ -22,8 +23,10 @@ async def main() -> None:
 	                                     refresh_token=refresh_token,
 	                                     user_id=tgtg_user_id,
 	                                     cookie=cookie)
+	time.sleep(2)
 	bot: Bot = Bot(telegram_bot_id)
 	for item in tgtg_client.get_items():
+		time.sleep(2)
 		items_available: int = item['items_available']
 		if items_available > 0:
 			await bot.send_message(chat_id=telegram_chat_id,
