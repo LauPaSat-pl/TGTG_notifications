@@ -3,7 +3,7 @@ name: tgtg notifications
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/15 8-11,17-19 * * *'
+    - cron: '*/15 11-14,20-22 * * *'
 
 jobs:
   build:
@@ -24,10 +24,10 @@ jobs:
 
       - name: execute py script # run main.py
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN2 }}
-          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN2 }}
-          TGTG_USER_ID: ${{ secrets.TGTG_USER_ID2 }}
-          COOKIE: ${{ secrets.COOKIE2 }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN3 }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN3 }}
+          TGTG_USER_ID: ${{ secrets.TGTG_USER_ID }}
+          COOKIE: ${{ secrets.COOKIE3 }}
           TG_BOT_ID: ${{ secrets.TG_BOT_ID }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
         run: python main.py
