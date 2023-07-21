@@ -3,7 +3,7 @@ name: tgtg notifications
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/15 10-12,19-21 * * *'
+    - cron: '*/30 10-12,19-21 * * 4,5'
 
 jobs:
   build:
